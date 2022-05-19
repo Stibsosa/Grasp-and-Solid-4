@@ -14,9 +14,11 @@ namespace Full_GRASP_And_SOLID
         private IList<Step> steps = new List<Step>();
 
         public Product FinalProduct { get; set; }
-
-        public void AddStep(Step step)
+//RECIPE desde un inicio agrega steps a STEP, lo que corresponde que RECIPE cree instancias de STEP
+//según patrón CREATOR
+        public void AddStep(Product input, double quantity, Equipment equipment, int time)
         {
+            Step step = new Step (input, quantity, equipment, time);
             this.steps.Add(step);
         }
 
